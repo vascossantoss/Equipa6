@@ -22,7 +22,7 @@ public class Test {
 	private static final String PERSISTENCE_UNIT_NAME = "FinancialAppJPA";
 	private static EntityManagerFactory factory;
 	private static EntityManager em = null;
-	
+	// 
 	public static void main(String [] args) {
 		Query q=null;
 		List<Transaction>transactions=null;

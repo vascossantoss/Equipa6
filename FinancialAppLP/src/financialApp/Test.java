@@ -50,7 +50,17 @@ public class Test {
 		Transaction t4=new Transaction(4,"26-10-2023",400.00,"rent","expense");
 		Transaction t5=new Transaction(5,"26-10-2023",1500.00,"salary","income");
 		
-		CategoryManagement cm=new CategoryManagement(em);
+		CategoryManagement cat1=new CategoryManagement(em);
+		transactions.add(t1);
+		transactions.add(t2);
+		transactions.add(t3);
+		transactions.add(t4);
+		transactions.add(t5);
+		
+		cat1.addategory(0,"testing" , 0, transactions);
+		em.persist(cat1);
+		
+		
 		
 		
 		

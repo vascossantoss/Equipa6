@@ -20,15 +20,16 @@ public class CategoryManagement {
 		
 	}
 	
-	public void addategory(int id,String name,double limit,List<Transaction>transactions) {
+	public void addcategory(int id,String name,double limit) {
 		Category cat=new Category();
 		man.persist(cat);
 		cat.setId(id);
 		cat.setName(name);
 		cat.setLimit(limit);
-		cat.getTransactions().addAll(transactions);
+	
 		
 	}
+	
 	
 	public void removeCategory(int id ) {
 		Category catRe=searchCategory(id);

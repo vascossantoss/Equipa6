@@ -22,15 +22,22 @@ public class UserManagement {
 	}
 	
 	
-	public User addUser(int id, String username, String passWord, List<Category>categories) {	
+	public User addUser(int id, String username, String passWord,List<Category>categories) {	
 		User us =new User();
 		man.persist(us);
-		
 		us.setId(id);
 		us.setUsername(username);;
 		us.setPassword(passWord);
-		us.getCategories().addAll(categories);
 		return us;
+	}
+	
+	public void addCateggory(int id,String nome,double limit) {
+		Category cat=new Category();
+		man.persist(cat);
+		cat.setId(id);
+		cat.setName(nome);
+		cat.setLimit(limit);
+		
 	}
 	
 	public void updateUser(int id, String userName, String password) {	

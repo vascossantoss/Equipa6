@@ -20,12 +20,14 @@ public class CategoryManagement {
 		
 	}
 	
-	public void addcategory(int id,String name,double limit) {
+	public Category addcategory(int id,String name,double limit,List<Transaction>transactions) {
 		Category cat=new Category();
 		man.persist(cat);
 		cat.setId(id);
 		cat.setName(name);
 		cat.setLimit(limit);
+		cat.getTransactions().addAll(transactions);
+		return cat;
 	
 		
 	}

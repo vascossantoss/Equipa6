@@ -7,6 +7,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+
+
 /**
  * @author user
  *
@@ -50,7 +52,11 @@ public class CategoryManagement {
 	
 	
 	
-	
+	@SuppressWarnings("unchecked")
+	public List<Category> findAllCategoy() {
+		Query qd = man.createQuery("Select cat from Category cat");
+		return qd.getResultList();
+	}
 	
 	
 	

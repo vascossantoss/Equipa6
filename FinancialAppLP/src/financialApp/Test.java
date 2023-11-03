@@ -25,11 +25,16 @@ public class Test {
 	// 
 	public static void main(String [] args) {
 		Query q=null;
+		// add arrays 
 		List<Transaction>transactions=null;
 	    List<Category>categories=null;
-		 
-		
-		
+		// print arrays
+	    List<User>dbUsers=null;
+	    List<Category>dbCategories=null;
+	    
+	    factory=Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME );
+		em=factory.createEntityManager();
+		/**
 		try {
 			
 			if(em==null) {
@@ -40,22 +45,28 @@ public class Test {
 		catch (Exception PersistenceException) {
 			System.out.print("Database already exists");
 		}
-		
+		**/
 		
 		em.getTransaction().begin();
 		
-		Transaction t1=new Transaction(1,"26-10-2023",100.00,"fuel","expense");
-		Transaction t2=new Transaction(2,"26-10-2023",200.00,"food","expense");
-		Transaction t3=new Transaction(3,"26-10-2023",300.00,"bills","expense");
-		Transaction t4=new Transaction(4,"26-10-2023",400.00,"rent","expense");
-		Transaction t5=new Transaction(5,"26-10-2023",1500.00,"salary","income");
+		Transaction t1=new Transaction();
+		t1.setAmount(50);
+		t1.setType("expense");
+		t1.setId(0);
+		t1.setNotes("bills");
+		t1.setDate("00-00-00");
+		//tansaction
+		Transaction t2=new Transaction();
+		t1.setAmount(1500);
+		t1.setType("income");
+		t1.setId(0);
+		t1.setNotes("none");
+		t1.setDate("00-00-00");
+		
 	
 		transactions.add(t1);
 		transactions.add(t2);
-		transactions.add(t3);
-		transactions.add(t4);
-		transactions.add(t5);
-		
+		//category
 		CategoryManagement catM=new CategoryManagement(em);
 		
 		categories.add(catM.addcategory(0, "bills",0,null));
@@ -63,16 +74,31 @@ public class Test {
 		categories.add(catM.addcategory(0, "food", 0, null));
 		categories.add(catM.addcategory(0, "transportation", 0, null));
 		categories.add(catM.addcategory(0, "leisure", 0, null));
-		
+		//user
 		UserManagement usM=new UserManagement(em);
 		
 		usM.addUser(0, "jhon", "123456", categories);
 		usM.addUser(0, "Tom","6341343" , categories);
 		
 		
+		em.getTransaction().commit();
 		
+		dbUsers=usM.findAllUser();
+		System.out.println("----------------------------");
+		System.out.print("Users table");
+		for (User u:dbUsers) {
+			System.out.println(u);
+		}
+		System.out.println("------------------------------");
+	    
 		
-		
+		dbCategories=catM.findAllCategoy();
+		System.out.println("----------------------------");
+		System.out.println("Category table");
+		for (User u:dbUsers) {
+			System.out.println(u);
+		}
+		System.out.println("------------------------------");
 		
 		
 		

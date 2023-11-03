@@ -14,6 +14,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.Query;
+
+
 
 /**
  * @author user
@@ -82,6 +85,9 @@ public class User {
 		}
 		return ts;
 	}
+	
+	
+	
 
 
 	

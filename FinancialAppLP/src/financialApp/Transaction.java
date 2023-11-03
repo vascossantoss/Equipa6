@@ -41,12 +41,8 @@ public class Transaction {
 	 * @param notes
 	 * @param type
 	 */
-	public Transaction(int id, String date, double amount, String notes, String type) {
-		this.id = id;
-		this.date = date;
-		this.amount = amount;
-		this.notes = notes;
-		this.type = type;
+	public Transaction() {
+	
 	}
 	/**
 	 * @return the id

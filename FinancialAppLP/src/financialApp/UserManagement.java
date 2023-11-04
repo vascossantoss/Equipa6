@@ -22,11 +22,8 @@ public class UserManagement {
 	
 	
 	public Userr addUser(int id, String username, String passWord) {
-		Userr us = man.find(Userr.class, id);
-		if (us == null) {
-			us = new Userr();
-			man.persist(us);
-		}
+		Userr us = new Userr();
+		man.persist(us);
 		us.setId(id);
 		us.setUsername(username);
 		us.setPassword(passWord);
@@ -34,14 +31,7 @@ public class UserManagement {
 		return us;
 	}
 	
-	public void addCateggory(int id,String nome,double limit) {
-		Category cat=new Category();
-		man.persist(cat);
-		cat.setId(id);
-		cat.setName(nome);
-		cat.setLimit(limit);
-		
-	}
+	
 	
 	public void updateUser(int id, String userName, String password) {	
 		Userr us = man.find(Userr.class, id);

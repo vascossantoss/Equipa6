@@ -6,8 +6,7 @@ package financialApp;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-
-
+//
 
 /**
  * @author user
@@ -22,12 +21,16 @@ public class UserManagement {
 	}
 	
 	
-	public User addUser(int id, String username, String passWord,List<Category>categories) {	
-		User us =new User();
-		man.persist(us);
+	public Userr addUser(int id, String username, String passWord) {
+		Userr us = man.find(Userr.class, id);
+		if (us == null) {
+			us = new Userr();
+			man.persist(us);
+		}
 		us.setId(id);
-		us.setUsername(username);;
+		us.setUsername(username);
 		us.setPassword(passWord);
+		us.getCategories().clear();
 		return us;
 	}
 	
@@ -41,7 +44,7 @@ public class UserManagement {
 	}
 	
 	public void updateUser(int id, String userName, String password) {	
-		User us = man.find(User.class, id);
+		Userr us = man.find(Userr.class, id);
 		us.setId(id);
 		us.setUsername(userName);
 		us.setPassword(password);
@@ -50,19 +53,19 @@ public class UserManagement {
 	}
 	
 	public void removeUser(int id) {
-		User re = searchUser(id);
+		Userr re = searchUser(id);
 		if(re != null) 
 			man.remove(re);
 		return;
 	}
 	
-	public User searchUser(int id) {
-		return man.find(User.class, id);
+	public Userr searchUser(int id) {
+		return man.find(Userr.class, id);
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<User> findAllUser() {
-		Query q = man.createQuery("Select us from User us");
+	public List<Userr> findAllUser() {
+		Query q = man.createQuery("Select us from Userr us");
 		return q.getResultList();
 	}
 	

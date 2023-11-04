@@ -11,8 +11,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 /**
@@ -32,7 +30,7 @@ public class Category {
 	
 	
 	@OneToMany(cascade= {CascadeType.ALL},fetch=FetchType.LAZY)
-	List<Transaction>transactions=new ArrayList<Transaction>();
+	List<Transactionn>transactions=new ArrayList<Transactionn>();
 
 	/**
 	 * @return the id
@@ -82,7 +80,7 @@ public class Category {
 	}
 	
 	
-	public List<Transaction> getTransactions(){
+	public List<Transactionn> getTransactions(){
 		return transactions;
 	}
 
@@ -90,8 +88,8 @@ public class Category {
 	@Override
 	public String toString() {
 		String ts="Category [name=" + name + ", limit=" + limit + "]";
-		for (Transaction t:transactions) {
-			ts=" "+ t+"\n";
+		for (Transactionn t:transactions) {
+			ts+=" "+ t+"\n";
 		}
 		return ts;
 	}

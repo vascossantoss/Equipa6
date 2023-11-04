@@ -6,8 +6,7 @@ package financialApp;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-
-
+//
 
 /**
  * @author user
@@ -22,15 +21,25 @@ public class CategoryManagement {
 		
 	}
 	
-	public Category addcategory(int id,String name,double limit,List<Transaction>transactions) {
+	public Category addcategory(int id,String name,double limit) {
 		Category cat=new Category();
 		man.persist(cat);
 		cat.setId(id);
 		cat.setName(name);
 		cat.setLimit(limit);
-		cat.getTransactions().addAll(transactions);
+		cat.getTransactions().clear();
+		//cat.getTransactions().addAll(transactions);
 		return cat;
 	
+		
+	}
+	
+	
+	public void updateCategory(int id,String name,double limit) {
+		Category cat=searchCategory(id);
+		cat.setId(id);
+		cat.setLimit(limit);
+		cat.setName(name);
 		
 	}
 	

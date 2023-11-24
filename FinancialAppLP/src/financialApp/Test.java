@@ -14,7 +14,7 @@ import javax.persistence.Persistence;
 
 
 /**
- * @author user
+ * @author Testeeeeee
  *
  */
 public class Test {

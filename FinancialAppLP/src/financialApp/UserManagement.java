@@ -27,7 +27,7 @@ public class UserManagement {
 		us.setId(id);
 		us.setUsername(username);
 		us.setPassword(passWord);
-		us.getCategories().clear();
+		us.getBudgets().clear();
 		return us;
 	}
 	

@@ -9,7 +9,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-
 public class Test {
 	private static final String PERSISTENCE_UNIT_NAME = "FinancialAppJPA";
 	private static EntityManagerFactory factory;

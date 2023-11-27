@@ -28,10 +28,7 @@ public class CategoryManagement {
 		cat.setName(name);
 		cat.setLimit(limit);
 		cat.getTransactions().clear();
-		//cat.getTransactions().addAll(transactions);
 		return cat;
-	
-		
 	}
 	
 	
@@ -49,8 +46,6 @@ public class CategoryManagement {
 		if (catRe!=null) {
 			man.remove(catRe);
 		}
-		
-		
 	}
 	
 	

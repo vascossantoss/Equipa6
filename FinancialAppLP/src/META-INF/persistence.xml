@@ -13,6 +13,8 @@
         <class>financialApp.Userr</class>
         <class>financialApp.Transactionn</class>
         <class>financialApp.Category</class>
+        <class>financialApp.Budget</class>
+        <class>financialApp.Goal</class>
         
         <properties>
    
@@ -20,7 +22,7 @@
             <property name="javax.persistence.jdbc.driver"
                 value="org.apache.derby.jdbc.EmbeddedDriver" />
             <property name="javax.persistence.jdbc.url"
-                value="jdbc:derby:C:\aulas23_24\Laboratorios\DBfinancialApp;create=true" />
+                value="jdbc:derby:/Users/vascosantos/aulas23_24/DBfinancialApp;create=true" />
 
             <!-- EclipseLink should create the database schema automatically -->
             

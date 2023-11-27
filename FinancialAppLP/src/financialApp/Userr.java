@@ -13,9 +13,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-
-
-
 /**
  * @author user
  *
@@ -27,13 +24,13 @@ public class Userr {
 	private int id;
 	private String username;
 	private String password;
-	
-	public Userr() {
-		
-	}
-	
+
 	@OneToMany(cascade= {CascadeType.ALL},fetch=FetchType.LAZY)
-	List<Category>categories=new ArrayList<Category>();
+	List<Budget> budgets = new ArrayList<Budget>();
+	@OneToMany(cascade= {CascadeType.ALL},fetch=FetchType.LAZY)
+	List<Goal> goals = new ArrayList<Goal>();
+	
+	public Userr() {}
 	
 	/**
 	 * @return the id
@@ -72,16 +69,32 @@ public class Userr {
 		this.password = password;
 	}
 	
-	public List<Category> getCategories(){
-		return categories;
+	
+	
+	/**
+	 * @return the budgets
+	 */
+	public List<Budget> getBudgets() {
+		return budgets;
 	}
+
+	/**
+	 * @return the goals
+	 */
+	public List<Goal> getGoals() {
+		return goals;
+	}
+
 	@Override
 	public String toString() {
-		String ts= "Userr [username=" + username + ", password=" + password + "]";
-		for (Category c:categories) {
-			ts+=" "+ c + "\n";
+		String s= "User [username=" + username + ", password=" + password + "]\n";
+		for (Budget b : budgets) {
+			s+="	"+ b + "\n";
 		}
-		return ts;
+		for (Goal g : goals) {
+			s+="	"+ g + "\n";
+		}
+		return s;
 	}
 	
 	

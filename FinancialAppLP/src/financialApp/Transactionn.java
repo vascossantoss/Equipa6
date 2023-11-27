@@ -19,39 +19,14 @@ import javax.persistence.Id;
 public class Transactionn {
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	
 	private int id;
 	private String date;
 	private double amount;
 	private String notes;
 	private String type;
 	
-	
-	
-	
-	/**
-	 * @param id
-	 * @param date
-	 * @param amount
-	 * @param notes
-	 * @param type
-	 */
-	public Transactionn() {
-	
-	}
-	
-	
-	public Transactionn(int id,String date,double amount,String notes,String type) {
-		this.id=id;
-		this.amount=amount;
-		this.date=date;
-		this.notes=notes;
-		this.type=type;
-	}
-	
-	
-	
-	
+	public Transactionn() {}
+		
 	/**
 	 * @return the id
 	 */
@@ -117,9 +92,6 @@ public class Transactionn {
 	@Override
 	public String toString() {
 		return "Transactionn [date=" + date + ", amount=" + amount + ", notes=" + notes + ", type=" + type + "]";
-		
-		
-		
 	}
 	
 	

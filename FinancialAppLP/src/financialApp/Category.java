@@ -31,6 +31,15 @@ public class Category {
 	
 	@OneToMany(cascade= {CascadeType.ALL},fetch=FetchType.LAZY)
 	List<Transactionn>transactions=new ArrayList<Transactionn>();
+	
+	public Double getSumOfTansactions() {
+		Double sum = 0.00;
+		for(Transactionn t : transactions) {
+			sum += t.getAmount();
+		}
+		return sum;
+		
+	}
 
 	/**
 	 * @return the id
@@ -87,11 +96,11 @@ public class Category {
 
 	@Override
 	public String toString() {
-		String ts="Category [name=" + name + ", limit=" + limit + "]";
+		String s="Category [name=" + name + ", limit=" + limit + "]\n";
 		for (Transactionn t:transactions) {
-			ts+=" "+ t+"\n";
+			s+="			"+ t +"\n";
 		}
-		return ts;
+		return s;
 	}
 	
 	

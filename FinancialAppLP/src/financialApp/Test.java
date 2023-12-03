@@ -17,7 +17,6 @@ public class Test {
 	public static void main(String [] args) {
 			
 	    List<Userr>users=null;
-//	    List<Category>Categories=null;
 	    
 	    factory=Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME );
 		em=factory.createEntityManager();
@@ -46,12 +45,12 @@ public class Test {
 		
 		// Create categories
 		CategoryManagement catM=new CategoryManagement(em);
-		Category cat1 = catM.addcategory(0,"Rent", 700);
-		Category cat2 = catM.addcategory(0,"Internet", 50);
-		Category cat3 = catM.addcategory(0,"Groceries", 300);
-		Category cat4 = catM.addcategory(0,"Gym", 100);
-		Category cat5 = catM.addcategory(0,"Health Insurance", 250);
-		Category cat6 = catM.addcategory(0,"Bonus", 0);
+		Category cat1 = catM.addCategory(0,"Rent", 700);
+		Category cat2 = catM.addCategory(0,"Internet", 50);
+		Category cat3 = catM.addCategory(0,"Groceries", 300);
+		Category cat4 = catM.addCategory(0,"Gym", 100);
+		Category cat5 = catM.addCategory(0,"Health Insurance", 250);
+		Category cat6 = catM.addCategory(0,"Bonus", 0);
 		
 		// Add categories to budget
 		System.out.println("-----------------------------------------------------");
@@ -68,11 +67,11 @@ public class Test {
 		us1.getBudgets().add(novoBudget);
 		
 		// Create transactions
-		Transactionn t1 = tMan.addTransaction(0, 100.00, "00-00-2023", "none", "expense");
-		Transactionn t2 = tMan.addTransaction(0, 100.00, "00-00-2023", "none", "expense");
-		Transactionn t3 = tMan.addTransaction(0, 350.00, "00-00-2023", "1", "expense");
-		Transactionn t4 = tMan.addTransaction(0, 150.00, "00-00-2023", "2", "expense");
-		Transactionn t5 = tMan.addTransaction(0, 50.00, "00-00-2023", "October Bonus", "income");
+		Transactionn t1 = tMan.addTransaction(0, 50.00, "24-11-2023", "Dinner", "expense");
+		Transactionn t2 = tMan.addTransaction(0, 20.00, "30-11-2023", "gas", "expense");
+		Transactionn t3 = tMan.addTransaction(0, 350.00, "02-12-2023", "groceries1", "expense");
+		Transactionn t4 = tMan.addTransaction(0, 150.00, "01-12-2023", "groceries2", "expense");
+		Transactionn t5 = tMan.addTransaction(0, 50.00, "02-12-2023", "November Bonus", "income");
 		//Add transactions to budget
 		System.out.println("-----------------------------------------------------");
 		System.out.println("ADDING TRANSACTIONS TO CATEGORIES");
@@ -102,7 +101,7 @@ public class Test {
 		
 		em.getTransaction().commit();
 		
-		users = usM.findAllUser();
+		users = usM.findAllUsers();
 		System.out.println("----------------------------");
 		System.out.print("USER TABLE\n");
 		for (Userr us: users) {

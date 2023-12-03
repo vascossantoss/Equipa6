@@ -22,8 +22,13 @@ protected EntityManager man;
 		t.setDate(date);
 		t.setType(type);
 		return t;
+	}
 	
-		
+	public Transactionn addTransaction(Transactionn t) {
+		man.getTransaction().begin();
+		man.persist(t);
+		man.getTransaction().commit();
+		return t;
 	}
 	
 	public Transactionn updateTransaction(int id, Double amount, String date, String notes, String type) {
@@ -33,6 +38,16 @@ protected EntityManager man;
 		t.setNotes(notes);
 		t.setDate(date);
 		t.setType(type);
+		man.persist(t);
+		return t;
+	}
+	
+	public Transactionn updateTransaction(Transactionn tr) {
+		Transactionn t = man.find(Transactionn.class, tr.getId());
+		t.setAmount(tr.getAmount());
+		t.setNotes(tr.getNotes());
+		t.setDate(tr.getDate());
+		t.setType(tr.getType());
 		man.persist(t);
 		return t;
 	}

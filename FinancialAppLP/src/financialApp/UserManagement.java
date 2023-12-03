@@ -20,41 +20,53 @@ public class UserManagement {
 		
 	}
 	
-	
-	public Userr addUser(int id, String username, String passWord) {
+	public Userr addUser(int id, String username, String password) {
 		Userr us = new Userr();
 		man.persist(us);
 		us.setId(id);
 		us.setUsername(username);
-		us.setPassword(passWord);
+		us.setPassword(password);
 		us.getBudgets().clear();
 		return us;
 	}
 	
-	
+	public Userr addUser(Userr u) {
+		man.getTransaction().begin();
+		man.persist(u);
+		man.getTransaction().commit();
+		return u;
+	}
 	
 	public void updateUser(int id, String userName, String password) {	
 		Userr us = man.find(Userr.class, id);
 		us.setId(id);
 		us.setUsername(userName);
-		us.setPassword(password);
-		
-		
+		us.setPassword(password);	
 	}
 	
-	public void removeUser(int id) {
-		Userr re = searchUser(id);
-		if(re != null) 
+	public Userr updateUser(Userr user) {
+		Userr u = man.find(Userr.class, user.getId());
+		u.setUsername(user.getUsername());
+		u.setPassword(user.getPassword());
+		man.persist(u);
+		return u;
+	}
+	
+	public boolean removeUser(int id) {
+		Userr re = findUser(id);
+		if(re != null) {
 			man.remove(re);
-		return;
+			return true;
+		}	
+		return false;
 	}
 	
-	public Userr searchUser(int id) {
+	public Userr findUser(int id) {
 		return man.find(Userr.class, id);
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Userr> findAllUser() {
+	public List<Userr> findAllUsers() {
 		Query q = man.createQuery("Select us from Userr us");
 		return q.getResultList();
 	}

@@ -26,6 +26,14 @@ public class Transactionn {
 	private String type;
 	
 	public Transactionn() {}
+	
+	public Transactionn(Double amount, String date, String notes, String type) {
+		this.id = 0;
+		this.amount = amount;
+		this.date = date;
+		this.notes = notes;
+		this.type = type;
+	}
 		
 	/**
 	 * @return the id

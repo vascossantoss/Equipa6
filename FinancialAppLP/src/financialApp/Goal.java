@@ -16,6 +16,12 @@ public class Goal {
 	
 	public Goal() {}
 
+	public Goal(String description,Double amount,Double saved) {
+		this.id = 0;
+		this.description=description;
+		this.amount=amount;
+		this.saved=saved;
+	}
 	/**
 	 * @return the id
 	 */

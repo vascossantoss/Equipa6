@@ -16,15 +16,20 @@ public class Budget {
 	@GeneratedValue(strategy=GenerationType.TABLE)
 	private int id;
 	private String description;
-	private Double balance;
 	private Double budgetLimit;
 	
 	@OneToMany(cascade= {CascadeType.ALL},fetch=FetchType.LAZY)
 	List<Category>categories=new ArrayList<Category>();
 	
-	public Budget() {
-		
+	public Budget() {}
+	
+	
+	public Budget(String description, Double budgetLimit) {
+		this.id = 0;
+		this.description = description;
+		this.budgetLimit = budgetLimit;	
 	}
+
 	
 	/**
 	 * 
@@ -89,20 +94,6 @@ public class Budget {
 	}
 
 	/**
-	 * @return the startBalance
-	 */
-	public Double getBalance() {
-		return balance;
-	}
-
-	/**
-	 * @param startBalance the startBalance to set
-	 */
-	public void setBalance(Double startBalance) {
-		this.balance = startBalance;
-	}
-
-	/**
 	 * @return the budgetLimit
 	 */
 	public Double getBudgetLimit() {
@@ -125,7 +116,7 @@ public class Budget {
 
 	@Override
 	public String toString() {
-		String s = "Budget [description=" + description + ", balance=" + balance + ", budgetLimit=" + budgetLimit + "]\n";
+		String s = "Budget [description=" + description +  ", budgetLimit=" + budgetLimit + "]\n";
 		for (Category c : categories) {
 			s+="		"+ c + "\n";
 		}

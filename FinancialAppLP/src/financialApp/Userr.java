@@ -32,6 +32,11 @@ public class Userr {
 	
 	public Userr() {}
 	
+	public Userr(String username,String password) {
+		this.id = 0;
+		this.username=username;
+		this.password=password;
+	}
 	/**
 	 * @return the id
 	 */

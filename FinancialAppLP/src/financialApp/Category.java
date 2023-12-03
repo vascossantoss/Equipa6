@@ -28,6 +28,11 @@ public class Category {
 	
 	public Category() {}
 	
+	public Category(String name, double limit) {
+		this. id = 0;
+		this.name = name;
+		this.limit = limit;
+	}
 	
 	@OneToMany(cascade= {CascadeType.ALL},fetch=FetchType.LAZY)
 	List<Transactionn>transactions=new ArrayList<Transactionn>();

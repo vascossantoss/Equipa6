@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Mon Nov 27 14:22:25 WET 2023:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-018c-1128-eead-000006c0f9c0 
+Sun Dec 03 16:22:32 WET 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-018c-307d-134b-000006c1b260 
 on database directory /Users/vascosantos/aulas23_24/DBfinancialApp with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5b37e0d2 
 Loaded from file:/Users/vascosantos/git/Equipa6_componente1/FinancialAppLP/lib/derby.jar
 java.vendor=Oracle Corporation

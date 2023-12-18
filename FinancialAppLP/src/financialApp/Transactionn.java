@@ -34,6 +34,14 @@ public class Transactionn {
 		this.notes = notes;
 		this.type = type;
 	}
+	
+	public Transactionn(int id, Double amount, String date, String notes, String type) {
+		this.id = id;
+		this.amount = amount;
+		this.date = date;
+		this.notes = notes;
+		this.type = type;
+	}
 		
 	/**
 	 * @return the id

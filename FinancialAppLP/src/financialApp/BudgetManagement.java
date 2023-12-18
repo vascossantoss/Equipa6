@@ -95,7 +95,8 @@ public class BudgetManagement {
 	}
 	
 	public void generateExtract(Budget budget) {
-		String str = "EXTRACT OF BUDGET " + budget.getDescription() + "€ Total Expense: " + budget.getTotalExpense() + "€ Total Income: "+ budget.getTotalIncome() + "€\n";
+		Double balance = budget.getBudgetLimit() - budget.getTotalExpense() + budget.getTotalIncome();
+		String str = "EXTRACT OF BUDGET " + budget.getDescription() + "\nBalance: " + balance + "€ Total Expense: " + budget.getTotalExpense() + "€ Total Income: "+ budget.getTotalIncome() + "€\n";
 		List<Category> cats = budget.getCategories();
 		for(Category c : cats) {
 			if(c.getLimit() > 0) {

@@ -14,23 +14,19 @@ public class Test {
 	private static EntityManagerFactory factory;
 	private static EntityManager em = null;
 	
+	public static EntityManager getEM() {
+		if (em == null) {
+			factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+			em = factory.createEntityManager();
+		}
+		return em;
+	}
+	
 	public static void main(String [] args) {
 			
 	    List<Userr>users=null;
-	    
-	    factory=Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME );
-		em=factory.createEntityManager();
+		em = getEM();
 		
-//		try {
-//			
-//			if(em==null) {
-//				factory=Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME );
-//				em=factory.createEntityManager();
-//			}
-//		}
-//		catch (Exception PersistenceException) {
-//			System.out.print("Database already exists");
-//		}
 	
 		em.getTransaction().begin();
 		UserManagement usM=new UserManagement(em);

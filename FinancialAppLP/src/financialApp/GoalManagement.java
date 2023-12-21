@@ -14,13 +14,13 @@ public class GoalManagement {
 		this.man = man;
 	}
 	
-	public Goal addGoal(int id, String description, Double amount) {
+	public Goal addGoal(int id, String description, Double amount, Double saved) {
 		Goal goal = new Goal();
 		man.persist(goal);
 		goal.setId(id);
 		goal.setDescription(description);
 		goal.setAmount(amount);
-		goal.setSaved(0.00);
+		goal.setSaved(saved);
 		return goal;
 	}
 	

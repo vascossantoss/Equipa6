@@ -77,7 +77,7 @@ public class Test {
 		budgetMan.addTransactionToBudget(novoBudget, cat3, t3);
 		budgetMan.addTransactionToBudget(novoBudget, cat6, t5);
 		// Create goal
-		Goal goal1 = gMan.addGoal(0, "Holidays", 2000.00);
+		Goal goal1 = gMan.addGoal(0, "Holidays", 2000.00, 0.0);
 		
 		System.out.println("-----------------------------------------------------");
 		System.out.println("ADDING GOAL");

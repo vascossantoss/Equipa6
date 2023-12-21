@@ -1,10 +1,10 @@
 ----------------------------------------------------------------
-Thu Dec 14 11:59:21 WET 2023:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-018c-6832-13ad-000006c1a460 
-on database directory /Users/vascosantos/aulas23_24/DBfinancialApp with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5b37e0d2 
+Wed Dec 20 10:35:32 WET 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-018c-86cb-7f26-000007b9cc18 
+on database directory /Users/vascosantos/aulas23_24/DBfinancialApp with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@531d72ca 
 Loaded from file:/Users/vascosantos/git/Equipa6_componente1/FinancialAppLP/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=19.0.2+7-44
+java.runtime.version=17.0.2+8-86
 user.dir=/Users/vascosantos/git/Equipa6_componente1/FinancialAppLP
 os.name=Mac OS X
 os.arch=x86_64
